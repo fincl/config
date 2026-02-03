@@ -123,30 +123,8 @@
 #define ADC_CURR_PIN         PA27
 #define DEFAULT_CURRENT_METER_SOURCE   CURRENT_METER_ADC
 
-
 // ------------------
-// SD Card (SPI1)
-// ------------------
-
-#define USE_SDCARD
-#define USE_SDCARD_SPI
-
-#define USE_SPI_DEVICE_1
-#define SPI1_SCK_PIN         PA14
-#define SPI1_SDI_PIN         PA12  // MISO
-#define SPI1_SDO_PIN         PA15  // MOSI
-
-#define SDCARD_SPI_INSTANCE  SPI1
-#define SDCARD_SPI_CS_PIN    PA13
-
-#define SDCARD_DETECT_PIN    NONE
-#define SDCARD_DETECT_INVERTED
-
-#define DEFAULT_BLACKBOX_DEVICE        BLACKBOX_DEVICE_SDCARD
-
-
-// ------------------
-// Optional external Baro/Mag on I2C0
+// Optional external Baro on I2C0
 // ------------------
 
 // Leave these enabled only if you actually wire supported sensors to I2C0.
@@ -163,11 +141,13 @@
 #define USE_BARO_LPS22DF
 #define BARO_I2C_INSTANCE    I2CDEV_0
 
+// ------------------
+// Magnetometer (HMC5883L on I2C1)
+// ------------------
 #define USE_MAG
 #define USE_MAG_HMC5883
-#define USE_MAG_QMC5883
-#define USE_MAG_LIS2MDL
-#define USE_MAG_LIS3MDL
-#define USE_MAG_AK8975
-#define USE_MAG_IST8310
-#define MAG_I2C_INSTANCE     I2CDEV_0
+
+// If your target config supports explicit bus selection macros, keep it on the same I2C bus as your baro:
+#define MAG_I2C_DEVICE       I2CDEV_1
+// Optional (only if your tree expects it / you want to force address):
+// #define MAG_I2C_ADDRESS    0x1E
