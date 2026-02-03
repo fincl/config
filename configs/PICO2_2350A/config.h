@@ -64,24 +64,26 @@
 
 
 // ------------------
-// IMU (MPU9250 on SPI0)
+// IMU (SPI0 on GPIO16/18/19 + CS17, INT22)
 // ------------------
 
 #define USE_GYRO
 #define USE_ACC
 
-// MPU9250 via SPI0
+// Compile BOTH so clones / variants still detect
 #define USE_GYRO_SPI_MPU9250
 #define USE_ACC_SPI_MPU9250
+#define USE_GYRO_SPI_MPU6500
+#define USE_ACC_SPI_MPU6500
 
 #define USE_SPI_DEVICE_0
 #define SPI0_SCK_PIN         PA18
 #define SPI0_SDI_PIN         PA16  // MISO
 #define SPI0_SDO_PIN         PA19  // MOSI
 
-#define GYRO_1_SPI_INSTANCE  SPI0
 #define GYRO_1_CS_PIN        PA17
 #define GYRO_1_EXTI_PIN      PA22
+#define GYRO_1_SPI_INSTANCE  SPI0
 
 // Set this to match your physical board orientation.
 // If unsure, start with CW0 and adjust after first gyro check in Configurator.
