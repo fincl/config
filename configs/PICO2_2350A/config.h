@@ -142,9 +142,9 @@
 #define BARO_I2C_INSTANCE    I2CDEV_0
 
 // ------------------
-// Magnetometer (HMC5883L on I2C1)
+// Magnetometer (HMC5883L on I2C0)
 // ------------------
-#define USE_MAG
+#define USE_MAG_QMC5883
 #define USE_MAG_HMC5883
 
 // If your target config supports explicit bus selection macros, keep it on the same I2C bus as your baro:
