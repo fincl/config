@@ -61,11 +61,6 @@
 
 // pin_out0..pin_out5 -> motor/servo 1..6
 #define MOTOR1_PIN           PA2
-#define MOTOR2_PIN           PA3
-#define MOTOR3_PIN           PA4
-#define MOTOR4_PIN           PA5
-#define MOTOR5_PIN           PA6
-#define MOTOR6_PIN           PA7
 
 
 // ------------------
