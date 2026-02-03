@@ -148,6 +148,6 @@
 #define USE_MAG_HMC5883
 
 // If your target config supports explicit bus selection macros, keep it on the same I2C bus as your baro:
-#define MAG_I2C_DEVICE       I2CDEV_1
+#define MAG_I2C_DEVICE       I2CDEV_0
 // Optional (only if your tree expects it / you want to force address):
 // #define MAG_I2C_ADDRESS    0x1E
